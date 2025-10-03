@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Roupa Desportiva</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function validarFormulario() {
+        var nome = document.getElementById('nome').value;
+        var email = document.getElementById('email').value;
+        var mensagem = document.getElementById('mensagem').value;
+        var erro = '';
+        if (nome.length < 3) erro += 'Nome deve ter pelo menos 3 caracteres.\n';
+        if (!email.includes('@')) erro += 'Email inválido.\n';
+        if (mensagem.length < 10) erro += 'Mensagem muito curta.\n';
+        if (erro) {
+            alert(erro);
+            return false;
+        }
+        alert('Mensagem enviada com sucesso!');
+        return false;
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Roupa Desportiva</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="conteudos.html">Conteúdos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="login.php">Área Reservada</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Contacto</h2>
+        <form onsubmit="return validarFormulario();">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Roupa Desportiva</p>
+    </footer>
+</body>
+</html>
